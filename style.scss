@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+$fs: 20px;
+$ff: "Libre Franklin", sans-serif;
+// Primary
+$blue: hsl(223, 87%, 63%);
+// Secondary
+$paleBlue: hsl(223, 100%, 88%);
+$lightRed: hsl(354, 100%, 66%);
+// Neutral
+$gray: hsl(0, 0%, 59%);
+$veryDarkBlue: hsl(209, 33%, 12%);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: $ff;
+}
+
+body {
+  font-size: 20px;
+  margin: 0;
+  min-height: 100vh;
+  .wrapper {
+    margin: auto;
+    margin-block: 3rem;
+    width: 40%;
+    .header {
+      text-align: center;
+      .logo-container {
+        width: 90px;
+        margin: auto;
+        margin-bottom: 1.5rem;
+
+        .logo {
+          width: 100%;
+          display: block;
+        }
+      }
+      h1 {
+        margin: 0 0 0 0;
+        color: $veryDarkBlue;
+        margin-bottom: 0.5rem;
+      }
+      h1 span {
+        color: $gray;
+        font-weight: 300;
+      }
+      p {
+        font-size: 0.9rem;
+        color: $veryDarkBlue;
+        margin: 0;
+        margin-bottom: 2rem;
+      }
+      form {
+        display: flex;
+        gap: 1rem;
+        // > input {
+        //   font-size: 15px;
+        //   flex-basis: 100%;
+        //   padding: 0.8rem 1.5rem;
+        //   border-radius: 40px;
+        //   border: 1px solid $paleBlue;
+        //   &:focus {
+        //     outline: none;
+        //   }
+        // }
+        > .form-control {
+          flex-basis: 100%;
+          div {
+            width: 80%;
+            margin-inline: auto;
+            text-align: left;
+            small {
+              font-size: 0.7rem;
+              font-style: italic;
+              color: $lightRed;
+            }
+          }
+          > input {
+            width: 100%;
+            font-size: 15px;
+            padding: 0.8rem 1.5rem;
+            border-radius: 40px;
+            border: 1px solid $paleBlue;
+
+            &:focus {
+              outline: none;
+            }
+          }
+          > input.error {
+            box-shadow: 0px 0px 4px $lightRed;
+            border-color: $lightRed;
+
+            &:focus {
+              outline: none;
+            }
+          }
+          > input.success {
+            border-color: rgb(99, 255, 99);
+            box-shadow: 0px 0px 4px rgb(99, 255, 99);
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+        > button {
+          padding: 0.8rem 1.5rem;
+          border-radius: 40px;
+          align-self: flex-start;
+          background-color: $blue;
+          color: white;
+          font-weight: 700;
+          border: none;
+          cursor: pointer;
+          flex-basis: 40%;
+          border-radius: 40px;
+          box-shadow: 0px 5px 10px 0px hsl(0, 0%, 80%);
+          &:hover {
+            background-color: hsl(223, 87%, 73%);
+          }
+        }
+      }
+      .illustration {
+        margin-block: 2rem;
+        width: 100%;
+        display: block;
+      }
+    }
+    footer {
+      .socials {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        .list-socials {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 35px;
+          border: 1px solid hsl(0, 0%, 80%);
+          border-radius: 50%;
+          height: 35px;
+          cursor: pointer;
+          pointer-events: none;
+          &:hover {
+            background-color: $blue;
+            border: none;
+          }
+          ion-icon {
+            color: $blue;
+            pointer-events: auto;
+            font-size: 17px;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      small {
+        font-size: 0.7rem;
+        color: $gray;
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and(max-width:500px) {
+  body .wrapper {
+    width: 80%;
+    margin-block: 2rem;
+    .header {
+      text-align: center;
+      .logo-container {
+        width: 60px;
+      }
+      font-size: 15px;
+      form {
+        flex-direction: column;
+        align-items: stretch;
+        > button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes error {
+  from {
+    background-color: $blue;
+  }
+  to {
+    background-color: red;
+  }
+}
